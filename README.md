@@ -1,8 +1,8 @@
 # Multiple MasterNode
 
-A script which is easily create Multiple Masternodes of the same coin in the same VPS.
+This script allows you to easily create multiple masternodes of the same coin on a single VPS.
 
-First of all you have to start one masternode using <a href="https://github.com/idchaincoin/IdchaincoinMNScript/blob/main/idchaincoin-18.04-20.04-mn.sh">idchaincoin-18.04-20.04-mn.sh</a> script that is your MainNode.
+To get started, you must first set up one masternode using the <a href="https://github.com/idchaincoin/IdchaincoinMNScript/blob/main/idchaincoin-18.04-20.04-mn.sh">idchaincoin-18.04-20.04-mn.sh</a> script. This initial masternode will serve as your MainNode.
 
 # Guide of use idchaincoin-18.04-20.04-mn.sh for MainNode:
 
@@ -13,7 +13,7 @@ sudo chmod +x idchaincoin-18.04-20.04-mn.sh
 ```
 ***
 
-# Guide for Install MultiMN:
+# Guide for Installing MultiMN:
 
 Install the multimn script 
 
@@ -26,7 +26,7 @@ multimn profadd idchaincoin.mn idchaincoin
 ```
 Now the idchaincoin profile is saved and the downloaded file can be removed if you want: `rm -rf idchaincoin.mn`
 
-Stop the idchaincoin Service:
+Stop the idchaincoin service:
 ```
 idchaincoin-cli stop
 systemctl stop idchaincoin
@@ -37,16 +37,16 @@ multimn install idchaincoin --bootstrap
 multimn install idchaincoin --bootstrap
 multimn install idchaincoin --bootstrap
 ```
-You can check every MN like this:
+You can check every MN using the below command as an example:
 ```
 idchaincoin-cli-1 getinfo
 idchaincoin-cli-2 getinfo
 idchaincoin-cli-3 getinfo
 idchaincoin-cli-all getinfo
 ```
-There's also a `idchaincoin-cli-0`, that is a reference to the 'main node', not a created one with multimn.
+There's also an `idchaincoin-cli-0`, which is a reference to the 'main node', not the created one with multimn.
 
-Now, if you want to uninstall any instances,then just uninstall it with:
+Now, if you want to uninstall any instances,then just uninstall it with this command:
 
 `multimn uninstall idchaincoin 2` (Uninstall instance 2)
 
@@ -55,12 +55,12 @@ You can uninstall all of them with:
 `multimn uninstall idchaincoin all`
 
 
-You can get priv key of all MN with:
+You can get priv key of all MN with this command:
 
 `multimn list idchaincoin --privkey`
 
 
-Note this all priv key and make `masternode.conf` in your Coldwallet where you done MasternodeTx.
+Note all the privkey and use it to make `masternode.conf` in your Coldwallet where you have done MasternodeTx.
 so `masternode.conf` look like this:
 ```
 MN0 IP:18050 MN_PrivKey Tx_Hash Output_Index
@@ -86,13 +86,13 @@ startmasternode alias false MN03
 
 Now StartMasternode in VPS with Service:
 
-`systemctl start idchaincoin` (Start your MN which is create with main_node <a href="https://github.com/idchaincoin/IdchaincoinMNScript/blob/main/idchaincoin-18.04-20.04-mn.sh">idchaincoin-18.04-20.04-mn.sh</a> script)
+`systemctl start idchaincoin` (Starts your MN which was created with main_node <a href="https://github.com/idchaincoin/IdchaincoinMNScript/blob/main/idchaincoin-18.04-20.04-mn.sh">idchaincoin-18.04-20.04-mn.sh</a> script)
 
-Below 3 MN which is create with `multimn` script.
+Below 3 MN which was created with `multimn` script.
 ```
 systemctl start   idchaincoin-1.service
 systemctl start   idchaincoin-2.service
 systemctl start   idchaincoin-3.service
 ```
 
-That's all now your MN start.
+That's all now your MN's have all started.
