@@ -1,0 +1,7 @@
+COIN_NAME="idchaincoin"
+COIN_PATH="/usr/local/bin/"
+COIN_DAEMON="idchaincoind"
+COIN_CLI="idchaincoin-cli"
+COIN_FOLDER="/root/.idchaincoin"
+COIN_CONFIG="idchaincoin.conf"
+COIN_SERVICE="idchaincoin.service"
